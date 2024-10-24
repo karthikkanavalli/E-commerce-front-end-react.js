@@ -69,8 +69,10 @@ const Cart = () => {
   };
 
   useEffect(() => {
+    console.log("use effcet called")
     // if (list.length>0) {
     updateCart();
+    
 
     // }
   }, [cartItems, cartTotal, totalItems]);

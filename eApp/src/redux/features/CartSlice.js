@@ -17,7 +17,7 @@ let cartSlice = createSlice({
           (total, item) => total + item.quantity,
           0
         )
-      : 0, 
+      : 0,
   },
   reducers: {
     addToCart(state, action) {
@@ -34,7 +34,6 @@ let cartSlice = createSlice({
         state.cartTotal += action.payload.price * action.payload.quantity;
       }
 
-      
       state.totalItems = state.cartItems.reduce(
         (total, item) => total + item.quantity,
         0
@@ -46,7 +45,6 @@ let cartSlice = createSlice({
       const itemToRemove = state.cartItems.find(
         (item) => item._id === action.payload._id
       );
-      
 
       if (itemToRemove) {
         state.cartTotal -= itemToRemove.price * itemToRemove.quantity;
@@ -56,7 +54,6 @@ let cartSlice = createSlice({
         (item) => item._id !== action.payload._id
       );
       console.log(state.cartItems);
-      
 
       // if (state.cartItems.length === 0) {
       //   state.cartTotal = 0;
@@ -64,7 +61,6 @@ let cartSlice = createSlice({
       //   console.log("empty cart");
       // }
 
-     
       state.totalItems = state.cartItems.reduce(
         (total, item) => total + item.quantity,
         0
@@ -81,7 +77,6 @@ let cartSlice = createSlice({
         state.cartTotal += item.price;
       }
 
-      
       state.totalItems = state.cartItems.reduce(
         (total, item) => total + item.quantity,
         0
@@ -98,7 +93,6 @@ let cartSlice = createSlice({
         state.cartTotal -= item.price;
       }
 
-      
       state.totalItems = state.cartItems.reduce(
         (total, item) => total + item.quantity,
         0
@@ -107,22 +101,27 @@ let cartSlice = createSlice({
     },
 
     setCart: (state, action) => {
+      console.log(action.payload.cart, "setCart");
       const { cartItems, totalItems, cartTotal } = action.payload || {};
       try {
         if (cartItems) {
-        state.cartItems = cartItems;
-        state.totalItems = totalItems || 0;
-        state.cartTotal = cartTotal || 0;
-      }
+          state.cartItems = cartItems;
+          state.totalItems = totalItems || 0;
+          state.cartTotal = cartTotal || 0;
+          localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+        }
       } catch (error) {
         console.log("Failed to set cart:", error);
       }
-       
     },
   },
 });
 
-
 export default cartSlice.reducer;
-export let { addToCart, removeFromCart, incrementQuantity, decrementQuantity, setCart } =
-  cartSlice.actions;
+export let {
+  addToCart,
+  removeFromCart,
+  incrementQuantity,
+  decrementQuantity,
+  setCart,
+} = cartSlice.actions;

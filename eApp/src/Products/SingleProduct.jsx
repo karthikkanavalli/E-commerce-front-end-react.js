@@ -74,9 +74,13 @@ const SingleProduct = () => {
           </button>
         </div>
       </div>
-      <div className="w-3/4 p-2 border rounded-lg shadow-lg h-4/5">
+
+
+
+      
+      <div className="w-3/4 border rounded-lg shadow-lg h-4/5">
         <h1 className="text-2xl font-bold">Similar Product</h1>
-        <div className="flex w-full overflow-x-auto m-uto h-fll broder-2 bg-skybg-red-600">
+        <div className="flex w-full gap-4 overflow-x-auto hfull broder-2 ">
           {similarProduct ? (
             similarProduct.map((item) => <Card key={item._id} product={item} />)
           ) : (

@@ -13,7 +13,7 @@ const Card = ({ product }) => {
   
   return (
     <>
-      <div className="h-full p-4 m-4 transition-shadow duration-300 bg-white border rounded-lg shadow-md w-90 hover:shadow-lg">
+      <div className="h-full p-4 transition-shadow duration-300 bg-white border rounded-lg shadow-md w-90 hover:shadow-lg">
         <div className="cursor-pointer"
           onClick={() => navigate(`/product/${product._id}`,
             { state: { product: product } })}>
