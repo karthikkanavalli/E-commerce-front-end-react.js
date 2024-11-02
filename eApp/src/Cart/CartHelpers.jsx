@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 const CartHelpers = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  // let { cartItems, cartTotal, totalItems } = useSelector((state) => state.cart);
+  // let {user:{_id:userId} ,  token} = useSelector((state) => state.auth);
+
 
   const saveToDB = async (
     cartItems,
@@ -40,7 +43,9 @@ const CartHelpers = () => {
     }
   };
 
-
+//  useEffect(() => {
+//     saveToDB(cartItems||[], cartTotal, totalItems, userId, token);
+//   }, [cartItems, totalItems, userId, token]);
   
   return { saveToDB };
 };

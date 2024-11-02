@@ -17,6 +17,7 @@ import { useEffect } from "react";
 import { setAllProducts } from "./redux/features/productsSlice";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import MyOrders from "./MyOrders/MyOrders";
 
 const App = () => {
   
@@ -50,7 +51,7 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<SingleProduct />} />
-            
+            <Route path="/orders" element={<MyOrders/>} />
             <Route path="/cart" element={<Cart />} />
 
             {/* admin routes */}
