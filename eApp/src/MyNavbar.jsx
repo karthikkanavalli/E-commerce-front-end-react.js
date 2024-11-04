@@ -35,7 +35,7 @@ const MyNavbar = () => {
 
 
   return (
-    <nav className="fixed top-0 flex items-center justify-between w-full h-16 px-8 bg-slate-50 border-slate-600">
+    <nav className="fixed top-0 flex items-center justify-between w-full h-16 px-8 bg-slate-50 border-slate-600 z-50">
       <button
         className="text-lg font-medium duration-100 transform rounded-sm text-slate-900 hover:text-slate-800 hover:border-b-2 hover:border-slate-800"
         onClick={() => navigate("/")}

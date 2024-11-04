@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyNavbar from "./MyNavbar";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import Home from "./Pages/Home";
+import Home from "./Pages/home/Home";
 import Admin from "./Admin/Admin";
 import ProductList from "./Admin/ProductList";
 import Addproduct from "./Admin/Addproduct";
@@ -45,7 +45,7 @@ const App = () => {
         {/* </div> */}
         <div className="mt-16 ">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />

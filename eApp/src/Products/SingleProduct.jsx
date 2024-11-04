@@ -23,8 +23,8 @@ const SingleProduct = () => {
   console.log(product);
   return (
     <div className="flex flex-col justify-center gap-4 px-6">
-      <div className="w-2/3 p-4 m-4 transition-shadow duration-300 bg-white border rounded-lg shadow-md hover:shadow-lg">
-        <div>
+      <div className="w-2/4 p-4 m-8 transition-shadow duration-300 bg-white border rounded-lg shadow-md hover:shadow-lg">
+        <div >
           <div>
             <img
               src="https://picsum.photos/200/300"
@@ -80,7 +80,7 @@ const SingleProduct = () => {
       
       <div className="w-3/4 border rounded-lg shadow-lg h-4/5">
         <h1 className="text-2xl font-bold">Similar Product</h1>
-        <div className="flex w-full gap-4 overflow-x-auto hfull broder-2 ">
+        <div className="flex w-full gap-4 overflow-x-auto hfull broder-2 bg-s">
           {similarProduct ? (
             similarProduct.map((item) => <Card key={item._id} product={item} />)
           ) : (

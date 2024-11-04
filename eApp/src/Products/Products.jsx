@@ -11,7 +11,7 @@ const Products = () => {
 
   
   return (
-    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 bg-inherit">
+    <div className="grid grid-cols-1 gap-y-4 md:grid-cols-2 lg:grid-cols-3 bg-inherit m-16">
       {productsList.map((product) => (
         <Card key={product._id} product={product} />
       ))}
